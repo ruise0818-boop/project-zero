@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: project-zero
+    runtime: node
+    plan: free
+    buildCommand: npm test
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: MCP_TOKEN
+        generateValue: true
+      - key: GAME_CODE
+        sync: false
